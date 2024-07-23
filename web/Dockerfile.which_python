@@ -1,0 +1,17 @@
+FROM python:3.11.2-slim-bullseye
+
+RUN apt-get update && \
+    apt-get upgrade --yes
+
+RUN useradd --create-home realpython
+USER realpython
+WORKDIR /home/realpython
+
+ENV VIRTUALENV=/home/realpython/venv
+RUN python3 -m venv $VIRTUALENV
+RUN echo "(Before)" && which python
+SHELL ["/bin/bash", "-c"]
+RUN echo "(ing)" && \
+    source $VIRTUALENV/bin/activate && \
+    which python
+RUN echo "(After)" && which python
