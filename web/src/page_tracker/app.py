@@ -4,7 +4,7 @@ from functools import cache
 from flask import Flask
 from redis import Redis, RedisError
 
-ERR_MESSAGE = "Sorry, something went wrong \N{pensive face}"
+ERR_MESSAGE = "Sorry, something went wrong \N{thinking face}"
 REDIS_PORT = 3679
 
 
